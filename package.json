@@ -1,8 +1,8 @@
 {
   "name": "gui-plus-next",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "description": "GUI vue3.x前端UI组件库",
-  "main": "index.js",
+  "main": "dist/gui.esm-bundle.js",
   "scripts": {
     "build": "rollup -c",
     "build:theme": "gulp build --gulpfile theme/gulpfile.js && cp-cli theme/lib lib"

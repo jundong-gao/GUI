@@ -5,14 +5,15 @@
  * Time: 3:55 PM
 -->
 <template>
-  <div :class="['gui-button', type]">{{title}}</div>
+  <div :class="['gui-button', type]">
+    <slot />
+  </div>
 </template>
 
 <script>
   export default {
-    name: "button",
+    name: "Button",
     props: {
-      title: String,
       type: String
     },
     data() {

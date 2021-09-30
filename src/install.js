@@ -11,7 +11,7 @@ import components from './components'
  * 组件名称前缀
  * @type {string}
  */
-const prefixName = 'gui-'
+const prefixName = 'Gui'
 
 /**
  * 组件新增install 方法

@@ -1,16 +1,15 @@
 
 /**
- * gui-plus-next  v0.1.0
+ * gui-plus-next  v0.1.3
  * (c) 2021 高俊东
  * @license MIT
  */
   
-import { openBlock, createElementBlock, normalizeClass, toDisplayString } from 'vue';
+import { openBlock, createElementBlock, normalizeClass, renderSlot } from 'vue';
 
 var script$1 = {
-    name: "button",
+    name: "Button",
     props: {
-      title: String,
       type: String
     },
     data() {
@@ -21,14 +20,16 @@ var script$1 = {
 function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return (openBlock(), createElementBlock("div", {
     class: normalizeClass(['gui-button', $props.type])
-  }, toDisplayString($props.title), 3 /* TEXT, CLASS */))
+  }, [
+    renderSlot(_ctx.$slots, "default")
+  ], 2 /* CLASS */))
 }
 
 script$1.render = render$1;
 script$1.__file = "packages/button/index.vue";
 
 var script = {
-    name: "input",
+    name: "Input",
     props: {
       type: String
     },
@@ -65,7 +66,7 @@ let components = [script$1, script];
  * @type {string}
  */
 
-const prefixName = 'gui-';
+const prefixName = 'Gui';
 /**
  * 组件新增install 方法
  * @param component 组件实例

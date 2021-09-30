@@ -9,7 +9,7 @@
 </template>
 <script>
   export default {
-    name: "input",
+    name: "Input",
     props: {
       type: String
     },
