@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <script src="./node_modules/vue/dist/vue.global.js"></script>
-  <script src="./dist/gui.global.js"></script>
+  <script src="../node_modules/vue/dist/vue.global.js"></script>
+  <script src="../dist/gui.global.js"></script>
+  <link rel="stylesheet" href="../lib/index.css">
   <title>GUI Example</title>
 </head>
 <body>
@@ -14,9 +15,11 @@
     const { createApp } = Vue
     const App = {
       template: `
-        app comps
-         <gui-button title="按钮"/>
-         <gui-input type="number"/>
+          app comps
+          <gui-button title="按钮"></gui-button>
+          <gui-button type="primary" title="按钮"/>
+          <gui-button type="danger" title="按钮"/>
+          <gui-input type="number"/>
       `
     }
 

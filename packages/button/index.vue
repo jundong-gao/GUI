@@ -5,14 +5,15 @@
  * Time: 3:55 PM
 -->
 <template>
-  <button>{{title}}</button>
+  <div :class="['gui-button', type]">{{title}}</div>
 </template>
 
 <script>
   export default {
     name: "button",
     props: {
-      title: String
+      title: String,
+      type: String
     },
     data() {
       return {}
@@ -20,6 +21,3 @@
   }
 </script>
 
-<style scoped>
-
-</style>

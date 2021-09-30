@@ -4,8 +4,8 @@
  * Date: 9/30/21
  * Time: 9:28 AM
  */
-import Button from './components/button'
-import Input from './components/input'
+import Button from '../packages/button'
+import Input from '../packages/input'
 
 
 let components = [

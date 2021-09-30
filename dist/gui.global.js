@@ -11,7 +11,8 @@ this.GUI = (function (vue) {
   var script$1 = {
       name: "button",
       props: {
-        title: String
+        title: String,
+        type: String
       },
       data() {
         return {}
@@ -19,11 +20,13 @@ this.GUI = (function (vue) {
     };
 
   function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-    return (vue.openBlock(), vue.createElementBlock("button", null, vue.toDisplayString($props.title), 1 /* TEXT */))
+    return (vue.openBlock(), vue.createElementBlock("div", {
+      class: vue.normalizeClass(['gui-button', $props.type])
+    }, vue.toDisplayString($props.title), 3 /* TEXT, CLASS */))
   }
 
   script$1.render = render$1;
-  script$1.__file = "src/components/button/index.vue";
+  script$1.__file = "packages/button/index.vue";
 
   var script = {
       name: "input",
@@ -42,7 +45,7 @@ this.GUI = (function (vue) {
   }
 
   script.render = render;
-  script.__file = "src/components/input/index.vue";
+  script.__file = "packages/input/index.vue";
 
   /**
    * Created by WebStorm.
@@ -98,7 +101,7 @@ this.GUI = (function (vue) {
    * Time: 3:46 PM
    */
   /**
-   * 组件库名称
+   * 组件库名称 GUI
    * @type
    */
 
