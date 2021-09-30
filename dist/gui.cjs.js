@@ -1,6 +1,6 @@
 
 /**
- * GUI  v1.0.0
+ * gui-plus-next  v0.1.0
  * (c) 2021 高俊东
  * @license MIT
  */
