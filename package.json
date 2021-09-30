@@ -1,10 +1,9 @@
 {
-  "name": "GUI",
-  "version": "1.0.0",
+  "name": "gui-plus-next",
+  "version": "0.1.0",
   "description": "GUI vue3.x前端UI组件库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "build:theme": "gulp build --gulpfile theme/gulpfile.js && cp-cli theme/lib lib"
   },
@@ -17,7 +16,8 @@
     "UI",
     "UI组件库"
   ],
-  "author": "",
+  "author": "1643549042@qq.com",
+  "private": false,
   "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.15.5",
