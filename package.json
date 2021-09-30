@@ -1,6 +1,6 @@
 {
   "name": "gui-plus-next",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "GUI vue3.x前端UI组件库",
   "main": "dist/gui.esm-bundle.js",
   "scripts": {
