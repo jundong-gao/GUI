@@ -1,0 +1,9 @@
+$primary-color: #409eff;
+$danger-color: #F56C6C;
+$success-color: #67c23a;
+$text-color: #444;
+$white-color: white;
+
+$primary-light-color: mix($white-color, $primary-color, 20%);
+$danger-light-color: mix($white-color, $danger-color, 20%);
+$success-light-color: mix($white-color, $success-color, 20%);
