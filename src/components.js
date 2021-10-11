@@ -6,11 +6,13 @@
  */
 import Button from '../packages/button'
 import Input from '../packages/input'
+import Dialog from '../packages/dialog'
 
 
 let components = [
   Button,
-  Input
+  Input,
+  Dialog
 ]
 
 export default components

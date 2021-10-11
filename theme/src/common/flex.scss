@@ -1,0 +1,7 @@
+.flex{display: flex;}
+.flex-aic{@extend .flex; align-items: center;}
+.flex-jasc{@extend .flex; align-items: center; justify-content: space-between;}
+.flex-jasc-end{@extend .flex; align-items: center; justify-content: flex-end;}
+.flex-jac{@extend .flex; align-items: center; justify-content: center;}
+.flex-grow{flex-grow: 1;}
+.flex-wrap{flex-wrap: wrap;}

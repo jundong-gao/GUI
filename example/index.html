@@ -14,14 +14,27 @@
   <script>
     const { createApp } = Vue
     const App = {
+      data() {
+        return {
+          showDialog: false
+        }
+      },
+      methods: {
+        dialogConfirm(e){
+          console.log('e::::::::::::::::', e)
+        }
+      },
       template: `
-          app comps
-          <gui-button title="按钮"></gui-button>
+          <gui-button>默认按钮</gui-button>
           <gui-button type="primary">常规按钮</gui-button>
           <gui-button type="danger">danger button</gui-button>
           <gui-button type="success">成功按钮</gui-button>
-
           <gui-input type="number" />
+          <hr>
+          <gui-button type="danger" @click="showDialog = !showDialog">显示doalog</gui-button>
+          <gui-dialog title="测试标题" width="500px" v-model:visible="showDialog" @confirm="dialogConfirm">
+            <div>内容部分</div>
+          </gui-dialog>
       `
     }
 

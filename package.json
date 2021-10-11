@@ -6,6 +6,7 @@
   "scripts": {
     "build": "rollup -c",
     "build:theme": "gulp build --gulpfile theme/gulpfile.js && cp-cli theme/lib lib",
+    "build:all": "npm run build && npm run build:theme",
     "release": "standard-version"
   },
   "repository": {
