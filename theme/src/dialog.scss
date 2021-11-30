@@ -2,12 +2,12 @@
 
 .gui-dialog{background-color: $white-color; box-sizing: border-box; box-shadow: 0 0 50px rgba(0,0,0,.1);
     &-mask{position: fixed; left: 0; top: 0; z-index: $zIndex; width: 100vw; height: 100vh; background-color: rgba(0,0,0,.3);}
-    &-title{padding: 0 20px; box-sizing: border-box; height: 42px; background-color: #f8f8f8; border-bottom: 1px solid #eee; overflow: hidden; font-size: 14px; color: #333; border-radius: 2px 2px 0 0 ;
+    &-title{padding: 0 20px; box-sizing: border-box; height: 40px; background-color: #f8f8f8; border-bottom: 1px solid #eee; overflow: hidden; font-size: 14px; color: #333; border-radius: 2px 2px 0 0 ;
         &-close{color: #333; font-size: 16px; font-style: initial; cursor: pointer;}
     }
     &-content{padding: 20px; box-sizing: border-box}
     &-footer{padding: 0 15px 12px; border-radius: 0 0 2px 2px;
-        &-btn{height: 25px; margin: 5px 5px 0; padding: 0 15px; color: #333; border: 1px solid #dedede; background-color: $white-color; border-radius: 2px; cursor: pointer; font-size: 12px; box-sizing: border-box;
+        &-btn{height: 30px; margin: 5px 5px 0; padding: 0 15px; color: #333; border: 1px solid #dedede; background-color: $white-color; border-radius: 2px; cursor: pointer; font-size: 12px; box-sizing: border-box;
             &.confirm{color: $white-color; background-color: $primary-color; border-color: $primary-color;}
         }
     }
@@ -15,36 +15,4 @@
 
 
 
-.fade-in-enter-active {
-    animation: fadein 0.3s;
-}
-.fade-in-enter-active .gui-dialog{
-    animation: zoomin 0.3s;
-}
-
-.fade-in-leave-active{
-    animation: fadeout 0.3s;
-}
-.fade-in-leave-active .gui-dialog {
-    animation: zoomout 0.3s;
-}
-
-@keyframes fadein{
-    from{opacity: 0;}
-    to{opacity: 1;}
-}
-@keyframes fadeout {
-    from{opacity: 1;}
-    to{opacity: 0;}
-}
-@keyframes zoomin{
-    0%{transform: scale(0);}
-    50%{transform: scale(1.1);}
-    100%{transform: scale(1);}
-}
-@keyframes zoomout{
-    0%{transform: scale(1);}
-    50%{transform: scale(1.1);}
-    100%{transform: scale(.8);}
-}
 
