@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/jundong-gao/GUI/compare/v0.1.7...v0.1.8) (2021-11-30)
+
+
+### Features
+
+* 新增animate.css动画库 ([e675a14](https://github.com/jundong-gao/GUI/commit/e675a14a2a3faf4533fcd42e39e8e8ee617b8036))
+
+
+### Bug Fixes
+
+* dialog组件修复 ([2620075](https://github.com/jundong-gao/GUI/commit/262007551c6dd59b971edded298b977d1e7f01be))
+
 ### [0.1.7](https://github.com/jundong-gao/GUI/compare/v0.1.6...v0.1.7) (2021-10-11)
 
 
