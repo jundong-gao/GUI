@@ -13,7 +13,7 @@ import json from '@rollup/plugin-json'
 import replace from '@rollup/plugin-replace'
 import babel from '@rollup/plugin-babel'
 import { terser } from 'rollup-plugin-terser'
-
+import nodePolyfills from 'rollup-plugin-node-polyfills'
 
 const NAME = 'GUI'
 
@@ -35,9 +35,11 @@ const createBaseConfig = () => {
     input: './src/entry.js',
     external: ['vue'],
     plugins: [
+      nodePolyfills(),
       peerDepsExternal(),
-      // commonjs(),
-      babel(),
+      babel({
+        exclude: 'node_modules/**'
+      }),
       resolve({
         extensions: ['.vue', '.jsx']
       }),

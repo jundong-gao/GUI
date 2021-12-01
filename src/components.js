@@ -7,12 +7,14 @@
 import Button from '../packages/button'
 import Input from '../packages/input'
 import Dialog from '../packages/dialog'
+import Chart from '../packages/chart'
 
 
 let components = [
   Button,
   Input,
-  Dialog
+  Dialog,
+  Chart
 ]
 
 export default components

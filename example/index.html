@@ -4,20 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <script src="../node_modules/vue/dist/vue.global.js"></script>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
   <script src="../dist/gui.global.js"></script>
   <link rel="stylesheet" href="../lib/index.css">
   <title>GUI Example</title>
+  <style>
+    .test-chart{width: 500px; height: 300px;}
+  </style>
 </head>
 <body>
   <div id="app"></div>
 
   <script>
+    console.log('echarts::::::::::::::::', echarts)
     const { createApp } = Vue
     const App = {
       data() {
         return {
-          showDialog: false
+          showDialog: false,
+          options: {
+            tooltip: {
+              trigger: 'axis'
+            },
+            xAxis: {
+              type: 'category',
+              data: ['123', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [
+              {
+                data: [1, 230, 224, 218, 135, 147, 260],
+                type: 'line'
+              }
+            ]
+          }
         }
+      },
+      mounted() {
+
       },
       methods: {
         dialogConfirm(e){
@@ -35,6 +61,7 @@
           <gui-dialog title="测试标题" width="500px" v-model:visible="showDialog" @confirm="dialogConfirm">
             <div>内容部分</div>
           </gui-dialog>
+          <gui-chart :options="options" class="test-chart"></gui-chart>
       `
     }
 

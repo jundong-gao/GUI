@@ -1,6 +1,6 @@
 
 /**
- * gui-plus-next  v0.1.7
+ * gui-plus-next  v0.1.8
  * (c) 2021 高俊东
  * @license MIT
  */
@@ -8,8 +8,13 @@
 'use strict';
 
 var vue = require('vue');
+var echarts = require('echarts');
 
-var script$2 = {
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e['default'] : e; }
+
+var echarts__default = /*#__PURE__*/_interopDefaultLegacy(echarts);
+
+var script$3 = {
     name: "Button",
     props: {
       type: String
@@ -19,7 +24,7 @@ var script$2 = {
     }
   };
 
-function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+function render$3(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createElementBlock("div", {
     class: vue.normalizeClass(['gui-button', $props.type])
   }, [
@@ -27,10 +32,10 @@ function render$2(_ctx, _cache, $props, $setup, $data, $options) {
   ], 2 /* CLASS */))
 }
 
-script$2.render = render$2;
-script$2.__file = "packages/button/index.vue";
+script$3.render = render$3;
+script$3.__file = "packages/button/index.vue";
 
-var script$1 = {
+var script$2 = {
     name: "Input",
     props: {
       type: String
@@ -40,16 +45,16 @@ var script$1 = {
     },
   };
 
-const _hoisted_1$1 = ["type"];
+const _hoisted_1$2 = ["type"];
 
-function render$1(_ctx, _cache, $props, $setup, $data, $options) {
-  return (vue.openBlock(), vue.createElementBlock("input", { type: $props.type }, null, 8 /* PROPS */, _hoisted_1$1))
+function render$2(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createElementBlock("input", { type: $props.type }, null, 8 /* PROPS */, _hoisted_1$2))
 }
 
-script$1.render = render$1;
-script$1.__file = "packages/input/index.vue";
+script$2.render = render$2;
+script$2.__file = "packages/input/index.vue";
 
-var script = {
+var script$1 = {
     name: "Dialog",
     props: {
       title: String,
@@ -84,15 +89,15 @@ var script = {
     }
   };
 
-const _hoisted_1 = { class: "gui-dialog-mask flex-jac" };
+const _hoisted_1$1 = { class: "gui-dialog-mask flex-jac" };
 const _hoisted_2 = { class: "gui-dialog-title flex-jasc" };
 const _hoisted_3 = { class: "gui-dialog-content" };
 const _hoisted_4 = { class: "gui-dialog-footer flex-jasc-end" };
 
-function render(_ctx, _cache, $props, $setup, $data, $options) {
+function render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return (vue.openBlock(), vue.createBlock(vue.Transition, { name: "fade-in" }, {
     default: vue.withCtx(() => [
-      vue.withDirectives(vue.createElementVNode("div", _hoisted_1, [
+      vue.withDirectives(vue.createElementVNode("div", _hoisted_1$1, [
         vue.createElementVNode("div", {
           class: "gui-dialog",
           style: vue.normalizeStyle($setup.dialogStyle)
@@ -128,8 +133,82 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
   }))
 }
 
+script$1.render = render$1;
+script$1.__file = "packages/dialog/index.vue";
+
+/**
+ * Created by WebStorm.
+ * User: 高俊东
+ * Date: 11/30/21
+ * Time: 5:48 PM
+ */
+const createUUID = function () {
+  var d = Date.parse(new Date());
+
+  if (window.performance && typeof window.performance.now === "function") {
+    d += performance.now(); //use high-precision timer if available
+  }
+
+  var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = (d + Math.random() * 16) % 16 | 0;
+    d = Math.floor(d / 16);
+    return (c == 'x' ? r : r & 0x3 | 0x8).toString(16);
+  });
+  return uuid;
+};
+
+var script = {
+    name: "Chart",
+    props: {
+      options: {
+        type: Object,
+        default: () => ({})
+      }
+    },
+    setup(props, context) {
+      let echartsInstance = vue.reactive(null);
+      let id = vue.ref(createUUID());
+
+      vue.onMounted(() => {
+
+      });
+
+      vue.watch(() => props.options, (val) => {
+        if(val) vue.nextTick(() => {
+          initChart(val);
+        });
+      }, {immediate: true});
+
+      function initChart (opt) {
+        // 初始化echarts实例
+        if(!echartsInstance) echartsInstance = echarts__default.init(document.getElementById(id.value));
+
+        echartsInstance.clear();
+        echartsInstance.setOption(opt);
+        echartsInstance.resize();
+      }
+
+
+
+
+      return {
+        id,
+        echartsInstance
+      }
+    }
+  };
+
+const _hoisted_1 = ["id"];
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (vue.openBlock(), vue.createElementBlock("div", {
+    id: $setup.id,
+    class: "gui-chart"
+  }, vue.toDisplayString($setup.id), 9 /* TEXT, PROPS */, _hoisted_1))
+}
+
 script.render = render;
-script.__file = "packages/dialog/index.vue";
+script.__file = "packages/chart/index.vue";
 
 /**
  * Created by WebStorm.
@@ -137,7 +216,7 @@ script.__file = "packages/dialog/index.vue";
  * Date: 9/30/21
  * Time: 9:28 AM
  */
-let components = [script$2, script$1, script];
+let components = [script$3, script$2, script$1, script];
 
 /**
  * Created by WebStorm.
