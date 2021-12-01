@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.9](https://github.com/jundong-gao/GUI/compare/v0.1.8...v0.1.9) (2021-12-01)
+
+
+### Features
+
+* chart组件 ([aa3ec5d](https://github.com/jundong-gao/GUI/commit/aa3ec5dee8c80fd7a7fb933bb076e6e51332f730))
+
 ### [0.1.8](https://github.com/jundong-gao/GUI/compare/v0.1.7...v0.1.8) (2021-11-30)
 
 
