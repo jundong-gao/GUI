@@ -3,69 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-  <script src="../node_modules/vue/dist/vue.global.js"></script>
-  <script src="../node_modules/echarts/dist/echarts.js"></script>
-  <script src="../dist/gui.global.js"></script>
   <link rel="stylesheet" href="../lib/index.css">
   <title>GUI Example</title>
-  <style>
-    .test-chart{width: 500px; height: 300px;}
-  </style>
 </head>
 <body>
-  <div id="app"></div>
-
-  <script>
-    console.log('echarts::::::::::::::::', echarts)
-    const { createApp } = Vue
-    const App = {
-      data() {
-        return {
-          showDialog: false,
-          options: {
-            tooltip: {
-              trigger: 'axis'
-            },
-            xAxis: {
-              type: 'category',
-              data: ['123', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
-            },
-            yAxis: {
-              type: 'value'
-            },
-            series: [
-              {
-                data: [1, 230, 224, 218, 135, 147, 260],
-                type: 'line'
-              }
-            ]
-          }
-        }
-      },
-      mounted() {
-
-      },
-      methods: {
-        dialogConfirm(e){
-          console.log('e::::::::::::::::', e)
-        }
-      },
-      template: `
-          <gui-button>默认按钮</gui-button>
-          <gui-button type="primary">常规按钮</gui-button>
-          <gui-button type="danger">danger button</gui-button>
-          <gui-button type="success">成功按钮</gui-button>
-          <gui-input class="animate__animated animate__backInDown" type="number" />
-          <hr>
-          <gui-button type="danger" @click="showDialog = !showDialog">显示doalog</gui-button>
-          <gui-dialog title="测试标题" width="500px" v-model:visible="showDialog" @confirm="dialogConfirm">
-            <div>内容部分</div>
-          </gui-dialog>
-          <gui-chart :options="options" class="test-chart"></gui-chart>
-      `
-    }
-
-    createApp(App).use(GUI).mount('#app')
-  </script>
+<ul>
+  <li>
+    <a href="./button.html">按钮</a>
+  </li>
+  <li>
+    <a href="./input.html">输入框</a>
+  </li>
+  <li>
+    <a href="./select.html">下拉选择</a>
+  </li>
+  <li>
+    <a href="./dialog.html">模态框</a>
+  </li>
+  <li>
+    <a href="./chart.html">echarts</a>
+  </li>
+</ul>
 </body>
 </html>

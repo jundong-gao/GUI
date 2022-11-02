@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="../node_modules/vue/dist/vue.global.js"></script>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
+  <script src="../dist/gui.global.js"></script>
+  <link rel="stylesheet" href="../lib/index.css">
+  <title>GUI Chart Example</title>
+  <style>
+    .test-chart{width: 500px; height: 300px;}
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const { createApp } = Vue
+    const App = {
+      data() {
+        return {
+          options: {
+            tooltip: {
+              trigger: 'axis'
+            },
+            xAxis: {
+              type: 'category',
+              data: ['123', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            },
+            yAxis: {
+              type: 'value'
+            },
+            series: [
+              {
+                data: [1, 230, 224, 218, 135, 147, 260],
+                type: 'line'
+              }
+            ]
+          }
+        }
+      },
+      //  class="animate__animated animate__backInDown"
+      template: `
+          <gui-chart :options="options" class="test-chart"></gui-chart>
+      `
+    }
+
+    createApp(App).use(GUI).mount('#app')
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="../node_modules/vue/dist/vue.global.js"></script>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
+  <script src="../dist/gui.global.js"></script>
+  <link rel="stylesheet" href="../lib/index.css">
+  <title>GUI Select Example</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const { createApp } = Vue
+    const App = {
+      data() {
+        return {
+          name: '高天'
+        }
+      },
+      mounted() {
+
+      },
+      template: `
+          <gui-select placeholder="请选择" v-model="name">
+            <gui-option label="选项一" value="高天"></gui-option>
+            <gui-option label="选项二" value="2"></gui-option>
+          </gui-select>
+      `
+    }
+
+    createApp(App).use(GUI).mount('#app')
+  </script>
+</body>
+</html>

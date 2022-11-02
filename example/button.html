@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="../node_modules/vue/dist/vue.global.js"></script>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
+  <script src="../dist/gui.global.js"></script>
+  <link rel="stylesheet" href="../lib/index.css">
+  <title>GUI Button Example</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const { createApp } = Vue
+    const App = {
+      data() {
+        return {
+        }
+      },
+      mounted() {
+
+      },
+      template: `
+          <gui-button>默认按钮</gui-button>
+          <gui-button type="primary">常规按钮</gui-button>
+          <gui-button type="danger">danger button</gui-button>
+          <gui-button type="success">成功按钮</gui-button>
+      `
+    }
+    createApp(App).use(GUI).mount('#app')
+  </script>
+</body>
+</html>

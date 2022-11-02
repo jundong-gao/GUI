@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <script src="../node_modules/vue/dist/vue.global.js"></script>
+  <script src="../node_modules/echarts/dist/echarts.js"></script>
+  <script src="../dist/gui.global.js"></script>
+  <link rel="stylesheet" href="../lib/index.css">
+  <title>GUI Input Example</title>
+</head>
+<body>
+  <div id="app"></div>
+
+  <script>
+    const { createApp } = Vue
+    const App = {
+      data() {
+        return {
+          num: 0,
+          text: ''
+        }
+      },
+      mounted() {
+
+      },
+      template: `
+{{text}}
+          <gui-input type="number" placeholder="输入数字" v-model="num"/>
+          <gui-input type="text" placeholder="输入文本" v-model="text"/>
+          <gui-input type="textarea" placeholder="说点啥..."/>
+      `
+    }
+
+    createApp(App).use(GUI).mount('#app')
+  </script>
+</body>
+</html>

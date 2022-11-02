@@ -1,0 +1,5 @@
+@import "common/const.scss";
+.gui-input{height: 38px; box-sizing: border-box; color: $text-color; padding: 0 10px; font-size: 14px; outline: none; width: 100%; border: 1px solid $input-border-color; border-radius: $input-border-radius; transition: all .2s ease-in;
+    &:focus{border-color: $primary-color;}
+    &_textarea{padding: 10px; height: 70px;}
+}

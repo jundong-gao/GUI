@@ -1,0 +1,7 @@
+@import "common/const.scss";
+.gui-option{height: 30px; font-size: 14px; cursor: pointer; color: $text-color; background-color: $white-color; padding: 0 10px; box-sizing: border-box;
+    &:hover{background-color: $select-hover-bgcolor;}
+    &_selected{color: $primary-color; background-color: $select-active-bgcolor; color: $white-color;
+        &:hover{background-color: $select-active-bgcolor; color: $white-color;}
+    }
+}
