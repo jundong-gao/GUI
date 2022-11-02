@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.10](https://github.com/jundong-gao/GUI/compare/v0.1.9...v0.1.10) (2022-11-02)
+
+
+### Features
+
+* select组件 ([22396c3](https://github.com/jundong-gao/GUI/commit/22396c33c4729ecdc5a0c636de6342e7334a8ccb))
+
 ### [0.1.9](https://github.com/jundong-gao/GUI/compare/v0.1.8...v0.1.9) (2021-12-01)
 
 
